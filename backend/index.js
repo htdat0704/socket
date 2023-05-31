@@ -41,9 +41,7 @@ function getRoomNames(productsArray) {
 }
 
 socketIO.on("connection", (socket) => {
-  for (const room of getRoomNames(productData["products"])) {
-    socket.join(room);
-  }
+  console.log(socketIO.of("/").adapter);
 
   console.log(socket.rooms);
 
@@ -83,7 +81,7 @@ socketIO.on("connection", (socket) => {
 
     const dataReturn = getProduct(data.id, productData["products"]);
     //Sends back the data after placing a bid
-    socket.in(data.id).emit("project updated", dataReturn);
+    socketIO.to(data.id).emit("project updated", dataReturn);
   });
 
   socket.on("getProduct", (data) => {
@@ -91,7 +89,7 @@ socketIO.on("connection", (socket) => {
     console.log(data.id);
     const dataReturn = getProduct(data.id, productData["products"]);
     //Sends back the data after placing a bid
-    socket.in(data.id).emit("project updated", dataReturn);
+    socketIO.to(data.id).emit("project updated", dataReturn);
   });
 });
 
