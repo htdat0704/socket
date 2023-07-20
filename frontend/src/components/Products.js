@@ -14,7 +14,7 @@ const Products = () => {
       navigate("/");
     }
     const fetchProducts = () => {
-      fetch("http://localhost:4000/api")
+      fetch("http://localhost:7000/api")
         .then((res) => res.json())
         .then((data) => {
           setProducts(data.products);

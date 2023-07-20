@@ -28,7 +28,7 @@ const Nav = ({ socket }) => {
   return (
     <nav className="navbar">
       <div className="header">
-        <h2>Bid Items</h2>
+        <h2>Socket</h2>
       </div>
 
       <div>

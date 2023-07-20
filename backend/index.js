@@ -8,7 +8,7 @@ const path = require("path");
 
 const socketIO = require("socket.io")(http, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "http://localhost:7200",
   },
 });
 
@@ -98,6 +98,6 @@ app.get("/api", (req, res) => {
   res.json(productData);
 });
 
-http.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
+http.listen(7000, () => {
+  console.log(`Server listening on ${7000}`);
 });
